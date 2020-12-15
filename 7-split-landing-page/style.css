@@ -1,0 +1,140 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+:root{
+  --bg-left: rgba(87, 84, 236, 0.7);
+  --bg-right: rgba(43, 43, 43, 0.8);
+  --btn-left-hover: rgba(87, 84, 236, 1);
+  --btn-right-hover: rgba(28, 122, 28, 1);
+  --hover-width: 75%;
+  --other-width: 25%;
+  --speed: 1000ms;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  height: 100vh;
+  overflow: hidden;
+  margin: 0;
+}
+
+.btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  left: 50%;
+  top: 40%;
+  transform: translateX(-50%);
+  text-decoration: none;
+  color: #fff;
+  border: .2rem solid #fff;
+  font-size: 1rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  width: 15rem;
+  padding: 1.5rem;
+}
+
+h1 {
+  color: #fff;
+  font-size: 4rem;
+  position: absolute;
+  top: 20%;
+  left: 50%;
+  transform: translateX(-50%);
+  white-space: nowrap;
+}
+
+.container {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  background-color: #333;
+}
+
+.split{
+  position: absolute;
+  width: 50%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.split.left {
+  left: 0;
+  background: url("./ps.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.split.left::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: var(--bg-left);
+}
+
+.split.left .btn:hover{
+  background-color: var(--btn-left-hover);
+  border-color: var(--btn-left-hover);
+}
+
+.split.right {
+  right: 0;
+  background: url("./xbox.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.split.right::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: var(--bg-right);
+}
+
+.split.right .btn:hover{
+  background-color: var(--btn-right-hover);
+  border-color: var(--btn-right-hover);
+}
+
+.split.left,
+.split.right,
+.split.left::before,
+.split.right::before {
+  transition: all var(--speed) ease-in-out;
+}
+
+
+
+.hover-left .split.left{
+  width: var(--hover-width);
+}
+
+.hover-left .split.right{
+  width: var(--other-width);
+}
+
+.hover-right .split.right{
+  width: var(--hover-width);
+}
+
+.hover-right .split.left{
+  width: var(--other-width);
+}
+
+@media (max-width: 800px) {
+  h1 {
+    font-size: 2rem;
+    top: 30%;
+  }
+  .btn {
+    padding: 1.2rem;
+    width: 12rem;
+  }
+}
