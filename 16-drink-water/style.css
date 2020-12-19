@@ -1,0 +1,99 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+
+:root{
+  --color-blue: rgb(14, 126, 255);
+  --color-darkblue: rgb(0, 85, 182);
+}
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--color-blue);
+  color: #fff;
+  font-family: 'Lato', sans-serif;
+  height: 100vh;
+  margin: 0;
+}
+
+.container {
+  width: 100%;
+  min-width: 350px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.glass {
+  background-color: #fff;
+  color: var(--color-darkblue);
+  width: 50px;
+  height: 100px;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+  border: 3px solid var(--color-darkblue);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.glass-top{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  overflow: hidden;
+  transition: height .2s linear;
+}
+
+.glass-top .remained{
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.glass-bottom{
+  display: flex;
+  height: 0%;
+  background-color: var(--color-blue);
+  overflow: hidden;
+  transition: height .2s linear;
+}
+
+.glass-bottom .percentage{
+  font-size: 24px;
+  font-weight: bold;
+  margin: auto;
+}
+
+.glass.main{
+  width: 150px;
+  height: 300px;
+  border-bottom-left-radius: 45px;
+  border-bottom-right-radius: 45px;
+}
+
+
+
+
+.glasses {
+  width: 250px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.glasses .glass{
+  margin: 10px 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  cursor: pointer;
+}
+
+.glasses .glass.full{
+  background-color: var(--color-blue);;
+  color:  #fff;
+}
